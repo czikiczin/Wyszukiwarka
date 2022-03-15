@@ -1,0 +1,13 @@
+extends base
+
+block content
+    each item in product
+        img(src=item.image)
+        for i in item.shops
+            h3= i.shopname
+            h2=i.price 
+            //h4=i.redirect
+            a(href='https://www.ceneo.pl' + i.redirect) Do sklepu
+    
+            
+        
