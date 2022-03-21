@@ -1,1 +1,19 @@
-body{}
+body{
+
+}
+
+
+.zdj{
+    display: flex;
+    margin:10ph 0;
+    padding:10px;
+    box-sizing:border-box;
+    width: 300px;
+    height: 300px;
+} 
+h5{
+    word-wrap: break-word;
+}
+.card{
+    width: 300px
+}
