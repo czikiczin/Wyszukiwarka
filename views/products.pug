@@ -2,48 +2,62 @@ extends base
 
 block content
     form(class="searching" method="GET" id="theform" onsubmit="return removeEmpties()")
-        input(type="text" placeholder="Search.." name="title"  )
-        br
-        <label for="category">Wybierz kategorię:</label>
-        <select name="category" id="cat" >
-        option(selected="selected" disabled value="")
-        each cat in categories
-            //- option(value="" selected disabled hidden )
-            option(value=`${cat}`) #{cat}
-        </select>
-        <label for="sort">Sortuj:</label>
-        <select name="sort" id="sort" >
-        option(selected="selected" disabled value="")
-        option(value='price') rosnaco
-        option(value='-price') malejaco
-        </select>
-
-        
-        <label for="price">Cena od</label>
-        input(type="text" id="price" name="price[gt]"   )
-        <label for="price">Cena do</label>
-         input(type="text" id="price" name="price[lt]" )
-        
+            input(type="text" placeholder="Search.." name="title"  )
+            br
+            <label for="category">Wybierz kategorię:</label>
+            <select name="category" id="cat" >
+            option(selected="selected" disabled value="")
+            each cat in categories
+                //- option(value="" selected disabled hidden )
+                option(value=`${cat}`) #{cat}
+            </select>
+            <label for="sort">Sortuj:</label>
+            <select name="sort" id="sort" >
+            option(selected="selected" disabled value="")
+            option(value='price') rosnaco
+            option(value='-price') malejaco
+            </select>
 
             
+            <label for="price">Cena od</label>
+            input(type="text" id="price" name="price[gt]"   )
+            <label for="price">Cena do</label>
+            input(type="text" id="price" name="price[lt]" )
             
-        button(type="submit") SZUKAJ
 
-   
-    each product in products
-        //let link=`https://www.ceneo.pl #{product.link}`
-        h2=product.title
-        h3=product.price
-        h3=product.category
-        h4= product.id
-        img(src=product.image)
-       
-        //- h4#link
-        if(product.shops.length==0)
-            a(href='https://www.ceneo.pl' + product.link) Link
-        else 
-            a(href='products'+product.link) Link
-        br
+                
+                
+            button(type="submit") SZUKAJ
+
+
+    section.py-12
+            .container.px-4.px-lg-6.mt-6
+                .row.gx-2.d-flex.justify-content-center
+                    each product in products
+                        .card.h-150
+                            // Product image                            
+                            img.zdj(src=product.image, alt='...')                           
+                            // Product details
+                            .card-body.p-2
+                                .text-center
+                                    // Product name
+                                    <div class="nazwa">
+                                        h5.nazwa=product.title
+                                    </div>
+                                    // Product price
+                                    h5="Cena: " + product.price + " zł"
+                                    if(product.shops.length==0)
+                                        a(href='https://www.ceneo.pl' + product.link) Zobacz oferty sklepów
+                                    else 
+                                        a(href='products'+product.link) Zobacz oferty sklepów
+                                    br
+                            // Product actions
+                            .card-footer.p-2.pt-0.border-top-0.bg-transparent
+                                .text-center
+                                        
+                    
+                    
+                    
 
     
      
