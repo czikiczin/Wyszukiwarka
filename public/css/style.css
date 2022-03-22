@@ -1,6 +1,4 @@
-body{
-
-}
+body{}
 
 
 .zdj{
@@ -9,7 +7,7 @@ body{
     padding:10px;
     box-sizing:border-box;
     width: 300px;
-    height: 300px;
+    height: 350px;
 } 
 h5{
     word-wrap: break-word;
@@ -17,3 +15,41 @@ h5{
 .card{
     width: 300px
 }
+.wys{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: thin;
+    margin: 10px;
+    padding:10px;
+}
+.odstep{
+    margin: 10px;
+}
+.main {
+    background-color:black;
+  }
+.d1 {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: darkgrey;
+    margin: 10px;
+    padding:10px;
+      float:left;
+    width:143px;
+    font-size: large;
+  }
+  
+.d2 {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: darkgrey;
+    margin: 10px;
+    padding:10px;
+    float:left;
+    width:96px;
+    font-size: large;
+  }
+.d3 {
+    clear:both;
+  }
