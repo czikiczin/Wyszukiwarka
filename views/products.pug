@@ -2,26 +2,28 @@ extends base
 
 block content
     form(class="searching" method="GET" id="theform" onsubmit="return removeEmpties()")
-            input(type="text" placeholder="Search.." name="title"  )
+            <div class="pm1">
+                input(type="text" placeholder="Search.." name="title"  )
+            </div>
             br
-            <label for="category">Wybierz kategorię:</label>
+            <label class="pm"for="category"> Wybierz kategorię: </label>
             <select name="category" id="cat" >
             option(selected="selected" disabled value="")
             each cat in categories
                 //- option(value="" selected disabled hidden )
                 option(value=`${cat}`) #{cat}
             </select>
-            <label for="sort">Sortuj:</label>
+            <label class="pm" for="sort">Sortuj:</label>
             <select name="sort" id="sort" >
             option(selected="selected" disabled value="")
-            option(value='price') rosnaco
-            option(value='-price') malejaco
+            option( class="pm" value='price') rosnaco
+            option( class="pm" value='-price') malejaco
             </select>
 
             
-            <label for="price">Cena od</label>
+            <label class="pm" for="price">Cena od</label>
             input(type="text" id="price" name="price[gt]"   )
-            <label for="price">Cena do</label>
+            <label class="pm" for="price">Cena do</label>
             input(type="text" id="price" name="price[lt]" )
             
 
