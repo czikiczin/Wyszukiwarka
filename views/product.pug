@@ -1,13 +1,20 @@
 extends base
 
 block content
-    each item in product
-        img(src=item.image)
-        for i in item.shops
-            h3= i.shopname
-            h2=i.price 
-            //h4=i.redirect
-            a(href='https://www.ceneo.pl' + i.redirect) Do sklepu
-    
-            
-        
+    section.py-12
+            .container.px-4.px-lg-6.mt-6
+                .row.gx-2.d-flex.justify-content-center
+                    each item in product
+                        .card.h-10
+                            img(src=item.image)
+                            .card-body.p-2
+                                .text-center                            
+                                for i in item.shops
+                                    <div class="wys">
+                                        h3= i.shopname
+                                        h3="Cena " + i.price + " zł" 
+                                        //h4=i.redirect
+                                        a(href='https://www.ceneo.pl' + i.redirect) Przejdz do sklepu  
+                                    </div>     
+                            .card-footer.p-2.pt-0.border-top-0.bg-transparent
+                                .text-center
