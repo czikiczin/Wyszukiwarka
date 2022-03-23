@@ -2,35 +2,35 @@ extends base
 
 block content
     form(class="searching" method="GET" id="theform" onsubmit="return removeEmpties()")
-            <div class="pm1">
-                input(type="text" placeholder="Search.." name="title"  )
-            </div>
-            br
-            <label class="pm"for="category"> Wybierz kategorię: </label>
-            <select name="category" id="cat" >
-            option(selected="selected" disabled value="")
-            each cat in categories
-                //- option(value="" selected disabled hidden )
-                option(value=`${cat}`) #{cat}
-            </select>
-            <label class="pm" for="sort">Sortuj:</label>
-            <select name="sort" id="sort" >
-            option(selected="selected" disabled value="")
-            option( class="pm" value='price') rosnaco
-            option( class="pm" value='-price') malejaco
-            </select>
+        
+        input(type="text" placeholder="Search.." name="title"  )
+        br
+        <label for="category">Wybierz kategorię:</label>
+        <select name="category" id="cat" >
+        option(selected="selected" disabled value="")
+        each cat in categories
+            //- option(value="" selected disabled hidden )
+            option(value=`${cat}`) #{cat}
+        </select>
+        <label for="sort">Sortuj:</label>
+        <select name="sort" id="sort" >
+        option(selected="selected" disabled value="")
+        option(value='price') rosnaco
+        option(value='-price') malejaco
+        </select>
 
-            
-            <label class="pm" for="price">Cena od</label>
-            input(type="text" id="price" name="price[gt]"   )
-            <label class="pm" for="price">Cena do</label>
-            input(type="text" id="price" name="price[lt]" )
-            
+        input(type="text" id="price" name="price[gt]"   )
 
-                
-                
-            button(type="submit") SZUKAJ
+        <label for="price">Cena od</label>
+        input(type="text" id="price" name="price[lt]" )
+        input(type="text" id="price" name="price[gt]"   )
+        <label for="price">Cena do</label>
+        input(type="text" id="price" name="price[lt]" )
 
+
+
+        button(type="submit") SZUKAJ
+   
 
     section.py-12
             .container.px-4.px-lg-6.mt-6
