@@ -27,17 +27,16 @@ block content
         input(type="text" id="price" name="price[gt]" placeholder="od"   )
         <label for="price"></label> -
         input(type="text" id="price" name="price[lt]" placeholder="do" )
-
+        <select name="sort" id="sort" >
+                                        option(selected="selected" disabled value="" hidden) Sortowanie
+                                        option(value='price') rosnaco
+                                        option(value='-price') malejaco
+                                        </select>
 
    
 
     section.py-12
             .container.px-4.px-lg-6.mt-6
-                <select name="sort" id="sort" >
-                                option(selected="selected" disabled value="" hidden) Sortowanie
-                                option(value='price') rosnaco
-                                option(value='-price') malejaco
-                                </select>
                 .row.gx-2.d-flex.justify-content-center
                     each product in products
                         <div class="odstep">
