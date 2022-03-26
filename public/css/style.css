@@ -100,7 +100,9 @@ h5{
     height: 30px;
 }
 #sort {
+    margin-left: 77%;
     height: 30px;
+    width: 176px;
 }
 #price {
     width: 100px;
