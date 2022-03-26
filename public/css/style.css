@@ -30,26 +30,43 @@ h5{
     background-color:black;
   }
 .d1 {
-    border-style: solid;
-    border-radius: 10px;
-    border-color: darkgrey;
+    border-bottom-style: solid;
+    border-bottom-color: #f06b05;
     margin: 10px;
     padding:10px;
       float:left;
     width:143px;
     font-size: large;
   }
+
+.d1 a {
+    color: #f06b05;
+}
+
+.d1 a:hover {
+    color: mediumaquamarine;
+    text-decoration: none;
+}
   
 .d2 {
-    border-style: solid;
-    border-radius: 10px;
-    border-color: darkgrey;
+    border-bottom-style: solid;
+    border-bottom-color: #f06b05;
     margin: 10px;
     padding:10px;
     float:left;
     width:96px;
     font-size: large;
   }
+
+.d2 a {
+    color: #f06b05;
+}
+
+.d2 a:hover {
+    color: mediumaquamarine;
+    text-decoration: none;
+}
+
 .d3 {
     clear:both;
   }
@@ -61,3 +78,34 @@ h5{
     padding-left: 40px;
     padding-top: 15px;
   }
+.szukaj{
+    background-color:#f06b05;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight: normal;
+    padding:5px 8px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #f06b05;
+    border: none;
+    height: 30px;
+    letter-spacing: 2px;
+}
+.szukaj:hover {
+    background-color: darkorange;
+}
+#cat {
+    height: 30px;
+}
+#sort {
+    height: 30px;
+}
+#price {
+    width: 100px;
+}
+.name {
+    height: 30px;
+}
+
