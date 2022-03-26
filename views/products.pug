@@ -15,34 +15,37 @@ block content
 
 
 
-        <select name="sort" id="sort" >
-        option(selected="selected" disabled value="" hidden) Sortuj
-        option(value='price') rosnaco
-        option(value='-price') malejaco
-        </select>
 
 
 
+
+
+        button(type="submit" class="szukaj") SZUKAJ
+        br
+        br
         <label for="price">Cena (zł)</label>
-
         input(type="text" id="price" name="price[gt]" placeholder="od"   )
         <label for="price"></label> -
         input(type="text" id="price" name="price[lt]" placeholder="do" )
-        button(type="submit" class="szukaj") SZUKAJ
-
 
 
    
 
     section.py-12
             .container.px-4.px-lg-6.mt-6
+                <select name="sort" id="sort" >
+                                option(selected="selected" disabled value="" hidden) Sortowanie
+                                option(value='price') rosnaco
+                                option(value='-price') malejaco
+                                </select>
                 .row.gx-2.d-flex.justify-content-center
                     each product in products
                         <div class="odstep">
-                            .card.h-10                           
+                            .card.h-10
                                 img.zdj(src=product.image, alt='...')                           
                                 .card-body.p-2
                                     .text-center
+
                                         <div class="nazwa">
                                             h5.nazwa=product.title
                                         </div>
@@ -52,8 +55,10 @@ block content
                                         else 
                                             a(href='products'+product.link) Zobacz oferty sklepów
                                         br
+
                                 .card-footer.p-2.pt-0.border-top-0.bg-transparent
                                     .text-center
+
                         </div>
                                         
                     
