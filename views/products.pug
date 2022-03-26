@@ -3,33 +3,35 @@ extends base
 block content
     form(class="searching" method="GET" id="theform" onsubmit="return removeEmpties()")
         
-        input(type="text" placeholder="Search.." name="title"  )
-        br
-        <label for="category">Wybierz kategorię:</label>
+        input(type="text" placeholder="Znajdź produkt" name="title" class="name"  )
         <select name="category" id="cat" >
-        option(selected="selected" disabled value="")
-        each cat in categories
-            //- option(value="" selected disabled hidden )
-            option(value=`${cat}`) #{cat}
-        </select>
-        <label for="sort">Sortuj:</label>
+                option(selected="selected" disabled value="" hidden) Wybierz kategorię
+                each cat in categories
+                    //- option(value="" selected disabled hidden )
+                    option(value=`${cat}`) #{cat}
+                </select>
+
+
+
+
+
         <select name="sort" id="sort" >
-        option(selected="selected" disabled value="")
+        option(selected="selected" disabled value="" hidden) Sortuj
         option(value='price') rosnaco
         option(value='-price') malejaco
         </select>
 
-        input(type="text" id="price" name="price[gt]"   )
-
-        <label for="price">Cena od</label>
-        input(type="text" id="price" name="price[lt]" )
-        input(type="text" id="price" name="price[gt]"   )
-        <label for="price">Cena do</label>
-        input(type="text" id="price" name="price[lt]" )
 
 
+        <label for="price">Cena (zł)</label>
 
-        button(type="submit") SZUKAJ
+        input(type="text" id="price" name="price[gt]" placeholder="od"   )
+        <label for="price"></label> -
+        input(type="text" id="price" name="price[lt]" placeholder="do" )
+        button(type="submit" class="szukaj") SZUKAJ
+
+
+
    
 
     section.py-12
@@ -61,5 +63,4 @@ block content
     
      
         
-    
     
