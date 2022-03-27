@@ -98,6 +98,8 @@ h5{
 }
 #cat {
     height: 30px;
+    margin-left: 10px;
+    margin-right: 3px;
 }
 #sort {
     margin-left: 51%;
@@ -106,8 +108,13 @@ h5{
 }
 #price {
     width: 100px;
+    margin-left:10px;
+    margin-right: 5px;
 }
 .name {
     height: 30px;
+    margin-left: 10px;
 }
-
+.cena{
+    margin-left:10px; 
+}
