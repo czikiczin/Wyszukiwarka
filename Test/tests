@@ -1,0 +1,44 @@
+let chai = require("chai");
+var request = require("request");
+let chaiHtttp = require("chai-http");
+const { expect } = require("chai");
+var cheerio = require("cheerio");
+chai.should();
+
+chai.use(chaiHtttp);
+
+describe("Testing get methods", () => {
+  //Test Get method for all products
+  describe("GET/products", () => {
+    it("It should render 30 products", (done) => {
+      chai
+        .request("http://localhost:8000")
+        .get("/")
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.have.header("content-type", "text/html; charset=utf-8");
+          var $ = cheerio.load(res.text);
+          const listOfProducts = $(".card");
+          listOfProducts.length.should.equal(30);
+          done();
+        });
+    });
+  });
+  //Test Get metod to find one product by ID
+  describe("GET/products/id", () => {
+    it("It should render one Product", (done) => {
+      const productId = 95247986;
+      chai
+        .request("http://localhost:8000")
+        .get("/" + productId)
+        .end((err, res) => {
+          res.should.have.status(200);
+          var $ = cheerio.load(res.text);
+          const Product = $(".card");
+          console.log(Product.length);
+          Product.length.should.equal(1);
+          done();
+        });
+    });
+  });
+});
