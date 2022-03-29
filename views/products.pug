@@ -35,29 +35,24 @@ block content
 
    
 
-    section.py-12
-            .container.px-4.px-lg-6.mt-6
-                .row.gx-2.d-flex.justify-content-center
-                    each product in products
-                        <div class="odstep">
-                            .card.h-10
-                                img.zdj(src=product.image, alt='...')                           
-                                .card-body.p-2
-                                    .text-center
 
-                                        <div class="nazwa">
-                                            h5.nazwa=product.title
-                                        </div>
-                                        h5="Cena: " + product.price + " zł"
-                                        if(product.shops.length==0)
-                                            a(href='https://www.ceneo.pl' + product.link) Zobacz oferty sklepów
-                                        else 
-                                            a(href='products'+product.link) Zobacz oferty sklepów
-                                        br
-
-                                .card-footer.p-2.pt-0.border-top-0.bg-transparent
-                                    .text-center
-
-                        </div>
+        .container
+            .row.gx-2.justify-content-center
+                each product in products
+                    <div class="odstep">
+                        .card.h-10
+                            img.zdj(src=product.image, alt='...')                           
+                            .card-body.p-1
+                                .text-center
+                                    <div class="nazwa">
+                                        h5.nazwa=product.title
+                                    </div>
+                                    h5="Cena: " + product.price + " zł"
+                                    if(product.shops.length==0)
+                                        a(href='https://www.ceneo.pl' + product.link) Zobacz oferty sklepów
+                                    else 
+                                        a(href='products'+product.link) Zobacz oferty sklepów
+                                    br
+                    </div>
                                         
                     
