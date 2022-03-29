@@ -1,3 +1,4 @@
+
 extends base
 
 block content
@@ -8,7 +9,7 @@ block content
                 option(selected="selected" disabled value="" hidden) Wybierz kategorię
                 each cat in categories
                     //- option(value="" selected disabled hidden )
-                    option(value=`${cat}`) #{cat}
+                    option(value=`${cat}`) #{cat.replace("/","")}
                 </select>
 
 
@@ -51,8 +52,7 @@ block content
                                     if(product.shops.length==0)
                                         a(href='https://www.ceneo.pl' + product.link) Zobacz oferty sklepów
                                     else 
-                                        a(href='products'+product.link) Zobacz oferty sklepów
+                                        a(href=product.link) Zobacz oferty sklepów
                                     br
                     </div>
-                                        
-                    
+                             
