@@ -58,11 +58,31 @@ describe("Testing get methods", () => {
           for (const el of Products) {
             prices.push(Number($(el).text()));
           }
-          
+
           for (let i = 0; i < prices.length - 1; i++) {
             prices[i].should.be.lessThanOrEqual(prices[i + 1]);
           }
-          
+          done();
+        });
+    });
+  });
+
+  describe("GET/products/pricesbetween", () => {
+    it("It should render products beetwen two prices", (done) => {
+      const minPrice = "100";
+      const maxPrice = "200";
+      chai
+        .request("http://localhost:8000")
+        .get("/" + "?price%5Bgt%5D=" + minPrice + "&price%5Blt%5D=" + maxPrice)
+        .end((err, res) => {
+          res.should.have.status(200);
+          var $ = cheerio.load(res.text);
+          const Products = $(".productPrice");
+
+          for (const el of Products) {
+            Number($(el).text()).should.be.lessThan(Number(maxPrice));
+            Number($(el).text()).should.be.greaterThan(Number(minPrice));
+          }
           done();
         });
     });
