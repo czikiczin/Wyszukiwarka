@@ -42,13 +42,19 @@ block content
                 each product in products
                     <div class="odstep">
                         .card.h-10
-                            img.zdj(src=product.image, alt='...')                           
+                            img.zdj(src=product.image, alt='...' class="image-fluid")                           
                             .card-body.p-1
                                 .text-center
                                     <div class="nazwa">
                                         h5.nazwa=product.title
                                     </div>
-                                    h5="Cena: " + product.price + " zł"
+                                    <div class="cena">
+                                        //- h5="Cena: " + product.price + " zł"
+                                        h5
+                                            span Cena: 
+                                            span(class='productPrice') #{product.price}
+                                            span zł
+                                    </div>
                                     if(product.shops.length==0)
                                         a(href='https://www.ceneo.pl' + product.link) Zobacz oferty sklepów
                                     else 
